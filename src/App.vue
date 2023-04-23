@@ -1,23 +1,30 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <!--<h1>{{useCounterStore.count}}</h1>-->
+    <h1>{{count}}</h1>
+    <button @click="add">+1</button>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import { mapStores } from 'pinia'
+import { mapActions, mapState } from 'pinia'
 import { useCounterStore } from '@/store'
 
 export default {
   name: 'App',
   computed: {
-    ...mapStores(useCounterStore)
+    ...mapState(useCounterStore, ['count'])
   },
   components: {
     HelloWorld
+  },
+  methods: {
+    ...mapActions(useCounterStore, ['increment']),
+    add() {
+      this.increment()
+    }
   }
 }
 </script>
