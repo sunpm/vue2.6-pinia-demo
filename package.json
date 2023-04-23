@@ -8,7 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.7.1",
     "core-js": "^3.6.5",
+    "pinia": "^2.0.35",
+    "pinia-plugin-persistedstate": "^3.1.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
