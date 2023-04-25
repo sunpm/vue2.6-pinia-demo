@@ -16,7 +16,10 @@
 ## 技术栈
 
 - Vue 2.6
-- Pinia 2.0
+- Pinia ^2.0.0
+- pinia-plugin-persistedstate
+
+[持久化插件使用方法](https://prazdevs.github.io/pinia-plugin-persistedstate/zh/guide/)
 
 ## 如何运行
 
