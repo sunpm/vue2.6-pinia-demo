@@ -1,4 +1,5 @@
 # Vue 2.6 + Pinia Demo
+[netlify备用](https://main--fancy-froyo-08882c.netlify.app/)
 
 这是一个使用 Vue 2.6 和 Pinia 的简单示例，旨在帮助开发者了解如何在 Vue 2.6 中使用 Pinia 状态管理库。
 
