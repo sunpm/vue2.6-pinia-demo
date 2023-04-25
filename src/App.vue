@@ -1,12 +1,15 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <GithubBtn />
     <hr>
     <h1>Option Store</h1>
-    <h3>{{count}}</h3>
-    <h3>双倍：{{double}}</h3>
-    <button @click="add">+1</button>
-    <button @click="reduce">-1</button>
+    <h3>{{ count }}</h3>
+    <h3>双倍：{{ double }}</h3>
+    <div>
+      <button @click="add">+1</button>
+      <button @click="reduce">-1</button>
+    </div>
     <hr>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -14,6 +17,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import { GithubBtn } from '@/components'
 import { mapActions, mapState } from 'pinia'
 import { useCounterStore } from '@/store'
 
@@ -23,7 +27,8 @@ export default {
     ...mapState(useCounterStore, ['count', 'double']),
   },
   components: {
-    HelloWorld
+    HelloWorld,
+    GithubBtn
   },
   methods: {
     ...mapActions(useCounterStore, ['increment', 'decrement']),
@@ -32,8 +37,8 @@ export default {
     },
     reduce() {
       this.decrement()
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -45,7 +50,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
+
 button {
   background: #FBCA1F;
   font-family: inherit;
