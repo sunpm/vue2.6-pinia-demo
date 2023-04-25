@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h1>{{count}}</h1>
+    <hr>
+    <h1>Option Store</h1>
+    <h3>{{count}}</h3>
+    <h3>双倍：{{double}}</h3>
     <button @click="add">+1</button>
+    <hr>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -15,7 +19,7 @@ import { useCounterStore } from '@/store'
 export default {
   name: 'App',
   computed: {
-    ...mapState(useCounterStore, ['count'])
+    ...mapState(useCounterStore, ['count', 'double']),
   },
   components: {
     HelloWorld
@@ -24,7 +28,7 @@ export default {
     ...mapActions(useCounterStore, ['increment']),
     add() {
       this.increment()
-    }
+    },
   }
 }
 </script>
@@ -37,5 +41,25 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+button {
+  background: #FBCA1F;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
 }
 </style>
