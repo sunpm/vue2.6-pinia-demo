@@ -6,6 +6,7 @@
     <h3>{{count}}</h3>
     <h3>双倍：{{double}}</h3>
     <button @click="add">+1</button>
+    <button @click="reduce">-1</button>
     <hr>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -25,10 +26,13 @@ export default {
     HelloWorld
   },
   methods: {
-    ...mapActions(useCounterStore, ['increment']),
+    ...mapActions(useCounterStore, ['increment', 'decrement']),
     add() {
       this.increment()
     },
+    reduce() {
+      this.decrement()
+    }
   }
 }
 </script>
